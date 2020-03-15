@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
 import Good from '../../component/goods/good';
-import './productOrderScss.scss';
+import './paySuccessScss.scss';
 class productOrderView extends Component {
   constructor(props, context) {
     super(props, context)
@@ -43,6 +43,7 @@ class productOrderView extends Component {
   render() {
     const {titlelist} = this.state;
     return (
+      
       <div className="product-order-layout">
         <div className="product-order-footer-buy-button">
           <div className="add-order" >金额</div>

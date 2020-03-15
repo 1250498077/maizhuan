@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
 import Good from '../../component/goods/good';
-import './productOrderScss.scss';
+import './loginScss.scss';
 class productOrderView extends Component {
   constructor(props, context) {
     super(props, context)
@@ -43,11 +43,17 @@ class productOrderView extends Component {
   render() {
     const {titlelist} = this.state;
     return (
-      <div className="product-order-layout">
-        <div className="product-order-footer-buy-button">
-          <div className="add-order" >金额</div>
-          <div className="submit-order" onClick={() => this.toBuy()}>提交订单</div>
-        </div>
+      <div className="login-layout">
+          <div className="input-container">
+            <div>
+              <input className="login-input" placeholder="登录账号"/>
+            </div>
+            <div style={{ marginTop: '0.5rem' }}>
+              <input className="login-input" placeholder="登录密码" />
+            </div>
+          </div>
+        
+        <div className="login-btn" >登录</div>
       </div>
     )
   }

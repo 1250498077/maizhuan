@@ -40,6 +40,10 @@ class productDetailView extends Component {
   // 已加载组件，收到新属性时调用
   componentWillReceiveProps(nextProps) {}
 
+  toBuy = () => {
+    this.props.history.push('/product-order')
+  }
+
   render() {
     const {titlelist} = this.state;
     return (
@@ -50,8 +54,14 @@ class productDetailView extends Component {
         </div>
 
         <div className="product-detail-footer-action">
-          <div>
-            
+          <div className="product-detail-footer-icon-button">
+            <div>客服</div>
+            <div>店铺</div>
+            <div>收藏</div>
+          </div>
+          <div className="product-detail-footer-buy-button">
+            <div className="add-shopcart" >加入购物车</div>
+            <div className="quick-buy" onClick={() => this.toBuy()}>立即购买</div>
           </div>
         </div>
       </div>

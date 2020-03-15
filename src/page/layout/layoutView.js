@@ -50,7 +50,7 @@ class LayoutView extends Component {
         </Switch>
         <div>
 
-          <div id="menu" className="menu">
+          {/* <div id="menu" className="menu">
               <Link to="/home">
                 <div id="one" className="subMenu text-center" data-src="radar.html">
                     <span className="glyphicon glyphicon-edit btn-lg" style={{fontSize: 16}}></span>
@@ -75,7 +75,7 @@ class LayoutView extends Component {
                     <div className="menu_name">我的</div>
                 </div>
               </Link>
-          </div>
+          </div> */}
 
         </div>
       </div>
