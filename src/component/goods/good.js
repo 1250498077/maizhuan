@@ -34,7 +34,7 @@ class Good extends Component {
   render() {
     const {product} = this.state;
     return (
-      <div className="good-tags-detail">
+      <div className="good-tags-detail" onClick={() => this.props.onClick()}>
         <div className="good-img-view">
 
             <img className="good-img" src={clothes1} />

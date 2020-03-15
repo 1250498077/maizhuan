@@ -8,6 +8,7 @@
 
 
 .menu {
+    z-index: 50;
     display: block;
     position: fixed;
     bottom: 0;
@@ -16,6 +17,7 @@
     color: white;
     padding-top: 10px;
     border-top: 1px solid #eee;
+    background-color: white;
 }
 
 .subMenu {

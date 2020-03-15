@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
 import Good from '../../component/goods/good';
 import './homeScss.scss';
+
 class HomeView extends Component {
   constructor(props, context) {
     super(props, context)
@@ -25,7 +26,7 @@ class HomeView extends Component {
   //完成：正在被重新渲染，状态已变化
   componentDidUpdate(prevProps, prevState) {}
   // 已加载组件，收到新属性时调用
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {}
 
   render() {
 
@@ -62,7 +63,9 @@ class HomeView extends Component {
 
           
           <div className="home-content" >
-             <Good />
+             <Good onClick={() => {
+               this.props.history.push('/product-detail')
+             }} />
           </div>
 
       </div>

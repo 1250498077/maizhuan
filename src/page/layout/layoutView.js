@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import router from '../../router/router'
 import './layoutScss.scss'
-import { Route, Switch, Link   } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import { TabBar, ListView } from 'antd-mobile';
 
 const data = [
@@ -21,9 +21,10 @@ const data = [
     title: 'Eat the week',
     des: '不是所有的兼职汪都需要风吹日晒',
   },
-];
+]
 
 class LayoutView extends Component {
+
   constructor(props, context) {
     super(props, context)
     this.state = {
@@ -50,22 +51,30 @@ class LayoutView extends Component {
         <div>
 
           <div id="menu" className="menu">
-              <div id="one" className="subMenu text-center" data-src="radar.html">
-                  <span className="glyphicon glyphicon-edit btn-lg" style={{fontSize: 16}}></span>
-                  <div className="menu_name">首页</div>
-              </div>
-              <div id="two" className="subMenu text-center" data-src="cha.html">
-                  <span className="glyphicon glyphicon-list btn-lg" style={{fontSize: 16}}></span>
-                  <div className="menu_name">特征</div>
-              </div>
-              <div id="three" className="subMenu text-center" data-src="advise.html">
-                  <span className="glyphicon glyphicon-comment btn-lg"  style={{fontSize: 16}}></span>
-                  <div className="menu_name">建议</div>
-              </div>
-              <div id="four" className="subMenu text-center" data-src="position.html">
-                  <span className="glyphicon glyphicon-sort-by-attributes-alt btn-lg"  style={{fontSize: 16}}></span>
-                  <div className="menu_name">我的</div>
-              </div>
+              <Link to="/home">
+                <div id="one" className="subMenu text-center" data-src="radar.html">
+                    <span className="glyphicon glyphicon-edit btn-lg" style={{fontSize: 16}}></span>
+                    <div className="menu_name">首页</div>
+                </div>
+              </Link>
+              <Link to="/classify">
+                <div id="two" className="subMenu text-center" data-src="cha.html">
+                    <span className="glyphicon glyphicon-list btn-lg" style={{fontSize: 16}}></span>
+                    <div className="menu_name">分类</div>
+                </div>
+              </Link>
+              <Link to="/shop">
+                <div id="three" className="subMenu text-center" data-src="advise.html">
+                    <span className="glyphicon glyphicon-comment btn-lg"  style={{fontSize: 16}}></span>
+                    <div className="menu_name">购物车</div>
+                </div>
+              </Link>
+              <Link to="/my">
+                <div id="four" className="subMenu text-center" data-src="position.html">
+                    <span className="glyphicon glyphicon-sort-by-attributes-alt btn-lg"  style={{fontSize: 16}}></span>
+                    <div className="menu_name">我的</div>
+                </div>
+              </Link>
           </div>
 
         </div>
