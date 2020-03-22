@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import router from '../../router/router'
 import './layoutScss.scss'
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import { TabBar, ListView } from 'antd-mobile';
 
 const data = [
@@ -23,15 +23,19 @@ const data = [
   },
 ]
 
+@withRouter
 class LayoutView extends Component {
 
   constructor(props, context) {
     super(props, context)
+    window.router = this.props.history;
+    console.log('布局组件', window.router)
     this.state = {
       selectedTab: 'redTab',
       hidden: false,
       fullScreen: false,
     }
+
   }
 
 
@@ -76,7 +80,7 @@ class LayoutView extends Component {
                 </div>
               </Link>
           </div> */}
-
+ 
         </div>
       </div>
     )

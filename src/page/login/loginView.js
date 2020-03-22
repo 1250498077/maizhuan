@@ -3,7 +3,9 @@ import { Component } from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
 import Good from '../../component/goods/good';
 import './loginScss.scss';
-class productOrderView extends Component {
+import store from './loginStore';
+
+class LoginView extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
@@ -17,6 +19,7 @@ class productOrderView extends Component {
       }],
       imgHeight: 176,
     }
+    this.store = store;
   }
 
   componentDidMount() {
@@ -44,19 +47,36 @@ class productOrderView extends Component {
     const {titlelist} = this.state;
     return (
       <div className="login-layout">
-          <div className="input-container">
-            <div>
-              <input className="login-input" placeholder="登录账号"/>
-            </div>
-            <div style={{ marginTop: '0.5rem' }}>
-              <input className="login-input" placeholder="登录密码" />
-            </div>
+        <div className="input-container">
+          <div>
+            <input
+              className="login-input" 
+              placeholder="登录账号" 
+              onClick={(e) => {
+                this.store.setStoreState({
+                  'data.username': e.target.value
+                });
+              }}/>
           </div>
+          <div style={{ marginTop: '0.5rem' }}>
+            <input 
+              className="login-input" 
+              placeholder="登录密码" 
+              onClick={(e) => {
+                this.store.setStoreState({
+                  'data.password': e.target.value
+                });
+              }}
+            />
+          </div>
+        </div>
         
-        <div className="login-btn" >登录</div>
+        <div className="login-btn" onClick={() => {
+          this.store.login()
+        }}>登录</div>
       </div>
     )
   }
 }
 
-export default productOrderView
+export default LoginView
